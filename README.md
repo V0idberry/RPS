@@ -1,3 +1,3 @@
-Set-up the project files.
-Completed the function getComuterChoice()
-Completed the function gameRound() 
+A project for creating a Rock, Paper, Scissors game.
+~
+~
