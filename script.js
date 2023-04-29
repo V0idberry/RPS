@@ -14,8 +14,8 @@ function getComputerChoice() {
 }
 
 function gameRound(playerSelection, computerSelection) {
-    if (playerSelection != ('rock' || 'paper' || 'scissors')) {
-        return(playerSelection + " isn't a valid input. Please use rock, paper or scissors");
+    if (playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') {
+        return('"' + playerSelection + '"' + " isn't a valid input. Please use rock, paper or scissors");
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         return ('You Win! Rock beats Scissors!');
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
