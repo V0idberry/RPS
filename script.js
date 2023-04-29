@@ -4,19 +4,18 @@ const choices = [
     "scissors"
 ];
 
+const playerSelection = prompt("Please type your choice: rock, paper or scissors").toLowerCase();
+const computerSelection = getComputerChoice();
+
 function getComputerChoice() {
     let randomChoice = choices[Math.floor(Math.random()*choices.length)];
 
     return randomChoice;
 }
 
-function gameRound() {
-    let playerResponse = prompt("Please type your choice: rock, paper or scissors");
-    let playerSelection = playerResponse.toLowerCase();
-    let computerSelection = getComputerChoice();
-
+function gameRound(playerSelection, computerSelection) {
     if (playerSelection != ('rock' || 'paper' || 'scissors')) {
-        return(playerResponse.charAt(0).toUpperCase() + playerResponse.slice(1) + " isn't a valid input. Please use rock, paper or scissors");
+        return(playerSelection + " isn't a valid input. Please use rock, paper or scissors");
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         return ('You Win! Rock beats Scissors!');
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
@@ -34,4 +33,4 @@ function gameRound() {
     }
 }
 
-console.log(gameRound());
+console.log(gameRound(playerSelection, computerSelection));
