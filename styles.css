@@ -3,6 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10vh;
 }
 
 .gameHeader {
@@ -19,7 +20,6 @@ body {
 .main-content {
     background-color: #d7c9aa;
     border: 3px #0b7a75 solid;
-    border-radius: 0 0 10px 10px;
     padding: 20px;
     min-height: 300px;
     min-width:400px;
@@ -38,9 +38,27 @@ body {
     border-radius: 3px;
 }
 
+#player-score,
+#computer-score {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 16px;
+}
+
 .btn-container {
     display: flex;
     min-width: 100%;
     padding: 20px;
     justify-content: space-evenly;
+}
+
+.results {
+    text-align: center;
+    background-color: #0b7a75;
+    border: 3px #0b7a75 solid;
+    border-radius: 0 0 10px 10px;
+    padding: 20px;
+    min-height: 50px;
+    min-width:400px;
+    color: #F0F3F5;
 }
