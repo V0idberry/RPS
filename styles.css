@@ -1,4 +1,5 @@
 body {
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
     background-color: #19535f;
     display: flex;
     flex-direction: column;
@@ -11,9 +12,8 @@ body {
     background-color: #0b7a75;
     border: 3px #0b7a75 solid;
     border-radius: 10px 10px 0 0;
-    padding: 20px;
     min-height: 100px;
-    min-width:400px;
+    min-width:440px;
     color: #F0F3F5;
 }
 
@@ -31,7 +31,7 @@ body {
 
 .score {
     display: flex;
-    min-width: 100%;
+    width: 370px;
     justify-content: space-evenly;
     text-align: center;
     border: 3px solid #0b7a75;
@@ -51,14 +51,83 @@ body {
     padding: 20px;
     justify-content: space-evenly;
 }
+.btn {
+  background-color: transparent;
+  border: 3px solid #0b7a75;
+  border-radius: 3px;
+  box-sizing: border-box;
+  min-width: 117px;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.restart-btn {
+    background-color: transparent;
+    border: 3px solid #F0F3F5;
+    border-radius: 3px;
+    box-sizing: border-box;
+    min-width: 117px;
+    color: #F0F3F5;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 19px;
+    outline: none;
+    padding: 13px 23px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+  }
+
+.btn:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.btn:active {
+  background-color: #0b7a75;
+  border-color: #0b7a75;
+  transform: scale(.96);
+}
+
+.btn:disabled {
+  border-color: grey;
+  color: grey;
+  cursor: not-allowed;
+  opacity: 1;
+}
 
 .results {
     text-align: center;
     background-color: #0b7a75;
     border: 3px #0b7a75 solid;
     border-radius: 0 0 10px 10px;
-    padding: 20px;
     min-height: 50px;
-    min-width:400px;
+    min-width: 440px;
     color: #F0F3F5;
 }

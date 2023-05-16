@@ -52,9 +52,11 @@ function checkGameOver() {
     if (playerScore == 5) {
         document.getElementById("show-results").innerHTML = "Game Over! You Won!";
         disableButtons();
+        restartButton();
     } else if (computerScore == 5) {
         document.getElementById("show-results").innerHTML = "Game Over! You Lost!"; 
         disableButtons();
+        restartButton();
     } 
 
 }
@@ -63,6 +65,10 @@ function disableButtons() {
     btnRock.disabled = true;
     btnPaper.disabled = true;
     btnScissors.disabled = true;
+}
+
+function restartButton() {
+    document.getElementById("button-appear").innerHTML = '<button class="restart-btn" role="button" onclick="window.location.reload()">New Game</button>'
 }
 
 btnRock.addEventListener('click', (e) => {
