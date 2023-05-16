@@ -8,6 +8,11 @@ let playerScore = 0;
 let computerScore = 0;
 
 
+const btnRock = document.getElementById('btnRock');
+const btnPaper = document.getElementById('btnPaper');
+const btnScissors = document.getElementById('btnScissors');
+
+
 function getComputerChoice() {
     let randomChoice = choices[Math.floor(Math.random()*choices.length)];
 
@@ -15,9 +20,7 @@ function getComputerChoice() {
 }
 
 function gameRound(playerSelection, computerSelection) {
-    if (playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') {
-        return('"' + playerSelection + '"' + " isn't a valid input. Please use rock, paper or scissors");
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+    if (playerSelection == 'rock' && computerSelection == 'scissors') {
         playerScore += 1;
         document.getElementById("show-results").innerHTML = 'You Win! Rock beats Scissors!';
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
@@ -45,15 +48,29 @@ function updateScore() {
     document.getElementById("computer-score").innerHTML = computerScore;
 }
 
-const btnRock = document.getElementById('btnRock');
-const btnPaper = document.getElementById('btnPaper');
-const btnScissors = document.getElementById('btnScissors');
+function checkGameOver() {
+    if (playerScore == 5) {
+        document.getElementById("show-results").innerHTML = "Game Over! You Won!";
+        disableButtons();
+    } else if (computerScore == 5) {
+        document.getElementById("show-results").innerHTML = "Game Over! You Lost!"; 
+        disableButtons();
+    } 
+
+}
+
+function disableButtons() {
+    btnRock.disabled = true;
+    btnPaper.disabled = true;
+    btnScissors.disabled = true;
+}
 
 btnRock.addEventListener('click', (e) => {
     playerSelection = e.target.innerText.toLowerCase();
     computerSelection = getComputerChoice();
     gameRound(playerSelection, computerSelection);
     updateScore();
+    checkGameOver();
 });
 
 btnPaper.addEventListener('click', (e) => {
@@ -61,6 +78,7 @@ btnPaper.addEventListener('click', (e) => {
     computerSelection = getComputerChoice();
     gameRound(playerSelection, computerSelection);
     updateScore();
+    checkGameOver();
 
 });
 
@@ -69,4 +87,5 @@ btnScissors.addEventListener('click', (e) => {
     computerSelection = getComputerChoice();
     gameRound(playerSelection, computerSelection);
     updateScore();
+    checkGameOver();
 });
